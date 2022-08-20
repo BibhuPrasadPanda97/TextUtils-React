@@ -1,16 +1,16 @@
 // import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react'
-import About from './components/About';
+// import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 import Alert from './components/Alert';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  // Link
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+//   // Link
+// } from "react-router-dom";
 
 
 function App() {
@@ -41,22 +41,22 @@ function App() {
   }
   return (
     <>
-      <Router>
+      {/* <Router> */}
         {/* <Navbar title="TextUtils" aboutText="About" /> */}
         {/* <Navbar/> */}
         <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
         <Alert alert={alert} />
         <div className="container my-3">
-          <Switch>
+          {/* <Switch>
             <Route exact path="/about">
               <About />
             </Route>
-            <Route exact path="/">
+            <Route exact path="/"> */}
               <TextForm heading="Enter the Text to analyze" mode={mode} showAlert={showAlert} />
-            </Route>
-          </Switch>
+            {/* </Route>
+          </Switch> */}
         </div>
-      </Router>
+      {/* </Router> */}
     </>
   );
 }
