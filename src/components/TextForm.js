@@ -37,8 +37,7 @@ export default function TextForm(props) {
         // console.log(event.target.value);
     }
 
-    const [text, setText] = useState();
-    // let textLen = text.length;
+    const [text, setText] = useState('');
     return (
         <>
             <div className='container' style={{color: props.mode==='dark'?'white':'black'}}>
@@ -53,10 +52,10 @@ export default function TextForm(props) {
             </div>
             <div className="container my-3" style={{color: props.mode==='dark'?'white':'black'}}>
                 <h2>Your text Summary</h2>
-                {/* <p>{text.split(" ").length} workds and {text.length} characters</p> */}
-                {/* <p>{0.008 * text.split(" ").length} minutes to read</p> */}
+                <p>{text.split(" ").filter((element) => {return element.length!=0}).length} workds and {text.length} characters</p>
+                <p>{0.008 * text.split(" ").filter((element) => {return element.length!=0}).length} minutes to read</p>
                 <h3 className='mt-3'>Preview</h3>
-                {/* <p>{textLen>0 ? text:"Enter some text to preview"}</p> */}
+                <p>{text.length>0 ? text:"Enter some text to preview"}</p>
                 <p>{text}</p>
             </div>
         </>
